@@ -1,0 +1,39 @@
+1. Synchronous vs. Asynchronous JavaScript
+Synchronous: Code executes line by line. If one task takes a long time, the rest of the code waits (8:35-12:36).
+Asynchronous: Multiple tasks can be initiated simultaneously. The code doesn't wait for one task to finish before moving to the next, which is essential for network requests and background operations (12:39-16:43).
+How to identify: If you see functions like setTimeout, setInterval, fetch, or Promises, the code is likely asynchronous (13:35-14:06).
+
+2. The JavaScript Engine Mechanics
+Main Stack: Where the primary synchronous code execution happens (29:30-30:00).
+Side Stack (Web APIs): Where asynchronous tasks are offloaded to be processed in the background (30:07-30:31).
+Event Loop: The mechanism that continuously monitors the Main Stack and moves completed tasks from the Side Stack/Callback Queue into the execution flow (33:17-33:59).
+
+3. Handling Asynchronous Code
+Callbacks: Functions passed as arguments to other functions to be executed once a task completes (40:14-41:33).
+Promises: A more readable way to handle async operations. A promise can be in three states: Pending, Resolved, or Rejected (46:40-47:44).
+.then(): Handles the successful resolution of a promise (48:50-49:02).
+.catch(): Handles errors or rejected promises (48:57-49:02).
+Async/Await: A syntactic sugar that makes asynchronous code look and behave like synchronous code, significantly improving readability (1:05:21-1:07:34).
+
+4. Key Code Patterns
+Basic Promise Structure:
+javascript
+var ans = new Promise((resolve, reject) => {
+if (true) return resolve();
+else return reject();
+});
+ans.then(() => console.log("Resolved")).catch(() => console.log("Rejected"));
+
+Sequential Tasks (Waterfall): Using .then() chaining to ensure specific tasks complete in a specific order (58:45-1:04:13).
+
+Async/Await Implementation:
+javascript
+async function getData() {
+let data = await fetch(url);
+let result = await data.json();
+console.log(result);
+}
+
+5. Additional Concepts
+Concurrency vs. Parallelism: Concurrency is about managing multiple tasks at once; Parallelism involves executing tasks simultaneously across multiple processor cores (1:14:30-1:15:47).
+Throttling: A technique to limit the frequency of function execution, often used for performance optimization in scroll or resize events (1:15:47-1:16:51).
