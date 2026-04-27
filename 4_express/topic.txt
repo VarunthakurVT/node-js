@@ -1,0 +1,8 @@
+Node.js vs. Express.js: The speaker explains that Express.js is a package that simplifies server creation compared to using Node's native HTTP module (1:43-12:39).
+Routing: How to handle different HTTP requests and create routes like /profile (12:43-15:57, 19:19-20:00).
+Middleware: The function of middleware as code that executes before routes, emphasizing the use of next() to pass control (26:43-38:19).
+Request and Response Objects: Explaining req for incoming data and res for sending server responses (32:24-34:06, 38:22-40:19).
+Dynamic Routing: Using route parameters (e.g., /profile/:username) to handle variable inputs (43:21-53:45).
+Template Engines: Setting up and using EJS to render dynamic views (1:10:11-1:12:47).
+Static Files: Configuring the public folder to serve CSS and images (1:13:00-1:21:49).
+Error Handling: Implementing an error handler to manage server exceptions (1:22:24-1:27:51).

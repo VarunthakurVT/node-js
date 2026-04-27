@@ -22,6 +22,18 @@ app.get("/users", (req, res) => {
         university : "Shoolini"
     })
 })
+app.get("/api/users"),(req,res)=>{
+    res.json(users)
+}
+app.get("/api/users/:id", (req, res) => {
+    const reqId = parseInt(req.params.id)
+    const providedUser = users.find((user) => {
+        return user.id == reqId
+    })
+    res.json(providedUser)
+})
+
 app.listen(Port,()=>{
     console.log(`server is running on port${Port}`)
 })
+//use nodemonxx
