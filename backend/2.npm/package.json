@@ -1,0 +1,16 @@
+{
+  "name": "2.npm",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Varun Thakur",
+  "type": "commonjs",
+  "main": "2_install.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "figlet": "^1.11.0",
+    "xorshift": "^1.2.0"
+  }
+}
