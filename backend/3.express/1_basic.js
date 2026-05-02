@@ -4,8 +4,7 @@ const express=require('express')
 const app = express()
 app.use(function(req,res,next){
     console.log("hello i am middleware")
-    next()nodemon : The term 'nodemon' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path 
-was included, verify that the path is correct and try again
+    next();
 })
 app.get('/',function(req,res){
     res.send("Hello")
