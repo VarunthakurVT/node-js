@@ -44,4 +44,25 @@ router.get("/checkban",function(req,res){
   }
 })
 
+// This route sets the cookie
+router.get('/login', (req, res) => {
+    res.cookie('sessionID', '12345ABC', {
+        httpOnly: true,
+        maxAge: 3600000 // 1 hour
+    });
+    res.send("Logged in and cookie set!");
+});
+
+// This route reads the cookie
+router.get('/profile', (req, res) => {
+    const sid = req.cookies.sessionID;
+    if (sid) {
+        res.send(`Welcome back! Session: ${sid}`);
+    } else {
+        res.send("Please log in first.");
+    }
+});
+
+module.exports = router;
+
 module.exports = router;
